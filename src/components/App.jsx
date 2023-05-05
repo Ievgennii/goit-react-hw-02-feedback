@@ -36,12 +36,13 @@ class App extends Component {
     const { good, neutral, bad } = this.state;
     const totalFeed = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
+    const options = Object.keys(this.state);
 
     return (
       <div className={css.section}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
+            options={options}
             onLeaveFeedback={this.handleIncrement}
           />
         </Section>
